@@ -1,5 +1,5 @@
 # Project Report
-(featuring lots of broken LateX!)
+(featuring lots of broken LaTeX!)
 
 <br>
 
