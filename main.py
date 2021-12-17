@@ -217,16 +217,11 @@ def rectify(img):
     # Make sure document is upright (might still be upside-down but oh well)
     if w > h:
         # Need to "rotate" corner points around by 90 degrees
-        tmp_pt = pts[0].copy()
-        pts[0] = pts[3].copy()
-        pts[3] = pts[2].copy()
-        pts[2] = pts[1].copy()
-        pts[1] = tmp_pt
+        pts[0], pts[1], pts[2], pts[3] = pts[3].copy(
+        ), pts[0].copy(), pts[1].copy(), pts[2].copy()
 
         # And swap width/height
-        temp = w
-        w = h
-        h = temp
+        w, h = h, w
 
     # Set up new rectangular points
     new_pts = np.array([[0, 0], [w, 0], [w, h], [0, h]])
